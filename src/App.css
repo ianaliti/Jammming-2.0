@@ -1,38 +1,180 @@
-.App {
+* {
   text-align: center;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, .cover{
+  /* background-image: url('./image/ian-keefe-NBQhCKtg_9Y-unsplash.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; */
+  background-color: bisque;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cover {
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.split {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  width: 70%;
+  left: 0;
+}
+
+/* Control the right side */
+.right {
+  width: 30%;
+  right: 0;
+  background-color: antiquewhite;
+}
+
+/* .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+} */
+
+
+/* Navigation bar */
+
+.navbar {
+ display: flex;
+ justify-content: space-between;
+ background-color: rgb(47, 25, 14, 0.7)
+
+
+}
+
+.playlist_icon {
+  color: azure;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 20px;
+  font-size: 25px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  color: rgb(251, 247, 255);
+  height: 3em;
+}
+
+.dropbtn {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: transparent;
+  color: azure;
+  padding: 20px;
+  font-size: 25px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  font-size: 20px;
+}
+
+.dropdown-content a {
+  color: azure;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.dropdown-content a:hover {font-size: 25px;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: transparent;
+}
+
+/* Search bar */
+
+.search-bar {
+  padding: 12rem 0 2rem 0;
+}
+
+
+.search-input {
+  height: 5em;
+  width: 25em;
+  border-radius: 4em;
+  border: solid rgb(18, 17, 17);
+}
+
+.search-input:focus {
+  border: 3px solid #3b3b88;
+  outline: none !important;
+}
+
+
+/* Tracklist */
+
+h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 40px;
+  color: azure;
+}
+
+.track_list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
 }
 
-.App-link {
-  color: #61dafb;
+.card {
+  flex: 0 1 calc(25% - 1em);
+  margin: 1rem .25em;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #212137;
+  background-color: azure;
+  border-radius: 1em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* .add-buttom {
+  
+} */
+
+.image {
+  max-width: 100%;
+  max-height: 100%;
+  padding-bottom: 10px;
+  background-color: transparent;
+}
+
+/* form name */
+
+.submitForm input {
+  height: 2em;
+  width: 15em;
+  border-radius: 4em;
+  border: solid rgb(18, 17, 17);
+  
+}
+
+.submitForm p {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
 }
