@@ -1,6 +1,6 @@
 import React from "react";
 
-const SearchResults = ({children}) => {
+const SearchResults = ( {children} ) => {
 
     return (
         <div className="track_list">

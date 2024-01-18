@@ -1,10 +1,11 @@
 import { React, useState } from 'react';
 import MyButton from '../button/MyButton';
+import SavedSong from '../savedSong/SavedSong';
 
 
 const UserPlaylist = () => {
 
-    const [playlists, setPlaylists] = useState([]);
+    const [playlistName, setPlaylistName] = useState([]);
     const [currentValue, setCurrectValue] = useState('');
     
     const handleChange = (e) => {
@@ -14,7 +15,7 @@ const UserPlaylist = () => {
     const addPlaylists = (e) => {
         e.preventDefault()
         if(currentValue.length > 0) {
-            setPlaylists([...playlists, currentValue])
+            setPlaylistName([...playlistName, currentValue])
             setCurrectValue('')
         }
       }
@@ -27,28 +28,27 @@ const UserPlaylist = () => {
         }
       }
     
-      const deletePlaylists = (playlist) => {
-        setPlaylists(playlists.filter(p => p.uri !== playlist.uri))
+      const deletePlaylists = (id) => {
+        setPlaylistName(playlistName.filter(p => p.id !== id))
       }
     
 
     return (
-        <div>
-            <p>Create a playlist</p>
+        <div className='playlistName'>
+            <p>Create your playlist</p>
             <input
                 type="text"
                 placeholder="My Playlist"
                 value={currentValue}
                 onChange={handleChange}
                 onKeyDown={handleKeyDown}
+                className='playlist_input'
                 />
             <MyButton onClick={addPlaylists}>Create</MyButton>
             <div>
                 <ul>
-                    {playlists.map((playlist) => (
-                        <li key={playlist.uri}>{playlist}
-                        <MyButton onClick={deletePlaylists}>Delete</MyButton>
-                        </li>
+                    {playlistName.map((playlist) => (
+                        <SavedSong key={playlist.id} playlist={playlist} deletePlaylists={deletePlaylists}/>
                     ))
                     }
                 </ul>

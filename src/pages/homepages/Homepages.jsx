@@ -3,7 +3,7 @@ import SearchResults from '../../components/searchResult/SearchResult';
 import SearchBar from '../../components/searchBar/SearchBar';
 import Track from '../../components/track/Track';
 import UserPlaylist from '../../components/userPlaylist/UserPlaylist'
-// import NavBar from './UI/NavBar';
+import NavBar from '../../components/navBar/NavBar';
 
 
 const spotify_client_id = '20902d6883cf474a9d9eac6475aad534';
@@ -71,6 +71,7 @@ export default function Homepage() {
   
     return (
       <div className='cover'>
+        <NavBar />
         <div className='split left'>
         <SearchBar onChange={(e) => setSearchInput(e.target.value)} onKeyDown={(e) => {
           if (e.key === 'Enter') {
