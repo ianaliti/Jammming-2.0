@@ -1,9 +1,9 @@
 import React from "react";
 import MyButton from "../button/MyButton";
 
-const SearchBar = ({...props}) => {
+const SearchBar = ({ ...props }) => {
 
-    
+
     return (
         <div className="search-bar">
             <div>

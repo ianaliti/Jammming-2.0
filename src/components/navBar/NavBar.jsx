@@ -9,7 +9,7 @@ const NavBar = () => {
                 <div className='dropdown'>
                     <button className="dropbtn">Jammming</button>
                     <div className='dropdown-content'>
-                    {/* <NavLink to='/'>Home</NavLink>
+                        {/* <NavLink to='/'>Home</NavLink>
                     <NavLink to='playlist'>Playlist</NavLink> */}
                     </div>
                 </div>

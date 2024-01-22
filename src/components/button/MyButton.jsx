@@ -1,7 +1,7 @@
 import React from "react";
 import classes from './SearchButton.module.css'
 
-const MyButton = ({children, ...props}) => {
+const MyButton = ({ children, ...props }) => {
 
     return (
         <div>
