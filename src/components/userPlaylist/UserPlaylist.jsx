@@ -15,8 +15,12 @@ const UserPlaylist = () => {
     const addPlaylist = (e) => {
         e.preventDefault()
         if(currentValue.length > 0) {
-            setPlaylists([...playlists, currentValue])
+            setPlaylists([...playlists, {
+                id: Math.random(),
+                title: currentValue,
+            }])
             setCurrectValue('')
+            console.log(playlists)
         }
       }
 
@@ -28,9 +32,9 @@ const UserPlaylist = () => {
         }
       }
     
-      const deletePlaylist = (event) => {
-        console.log(event);
-        setPlaylists(playlists.filter(playlist => playlist != event))
+      const deletePlaylist = (id) => {
+        console.log(id)
+        setPlaylists(playlists.filter(playlist => playlist.id !== id))
       }
     
 
@@ -49,10 +53,17 @@ const UserPlaylist = () => {
             <MyButton onClick={addPlaylist}>Create</MyButton>
             </div>
             <div className='savedPlaylist'>
-                {playlists.map((playlist) => (
-                    <PlaylistComponent key={playlist} playlist={playlist} deletePlaylist={deletePlaylist}/>
-                ))
-                }
+                <ul>
+                    {
+                        playlists.map(playlist => (
+                            <PlaylistComponent 
+                                key={playlist.id} 
+                                deletePlaylist={deletePlaylist} 
+                                {...playlist}
+                            />
+                    ))
+                    }
+                </ul>
             </div>
         </div>
     );
