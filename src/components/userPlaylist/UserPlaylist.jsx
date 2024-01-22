@@ -1,21 +1,21 @@
 import { React, useState } from 'react';
 import MyButton from '../button/MyButton';
-import SavedSong from '../savedSong/SavedSong';
+import PlaylistComponent from '../PlaylistComponent/PlaylistComponent';
 
 
 const UserPlaylist = () => {
 
-    const [playlistName, setPlaylistName] = useState([]);
+    const [playlists, setPlaylists] = useState([]);
     const [currentValue, setCurrectValue] = useState('');
     
     const handleChange = (e) => {
         setCurrectValue(e.target.value)
     }
 
-    const addPlaylists = (e) => {
+    const addPlaylist = (e) => {
         e.preventDefault()
         if(currentValue.length > 0) {
-            setPlaylistName([...playlistName, currentValue])
+            setPlaylists([...playlists, currentValue])
             setCurrectValue('')
         }
       }
@@ -23,18 +23,20 @@ const UserPlaylist = () => {
       const handleKeyDown = (e) => {
         if(e.key == 'Enter') {
             if(currentValue.length > 0) {
-                addPlaylists(e)
+                addPlaylist(e)
             }
         }
       }
     
-      const deletePlaylists = (id) => {
-        setPlaylistName(playlistName.filter(p => p.id !== id))
+      const deletePlaylist = (event) => {
+        console.log(event);
+        setPlaylists(playlists.filter(playlist => playlist != event))
       }
     
 
     return (
-        <div className='playlistName'>
+        <div className='playlists'>
+            <div>
             <p>Create your playlist</p>
             <input
                 type="text"
@@ -44,14 +46,13 @@ const UserPlaylist = () => {
                 onKeyDown={handleKeyDown}
                 className='playlist_input'
                 />
-            <MyButton onClick={addPlaylists}>Create</MyButton>
-            <div>
-                <ul>
-                    {playlistName.map((playlist) => (
-                        <SavedSong key={playlist.id} playlist={playlist} deletePlaylists={deletePlaylists}/>
-                    ))
-                    }
-                </ul>
+            <MyButton onClick={addPlaylist}>Create</MyButton>
+            </div>
+            <div className='savedPlaylist'>
+                {playlists.map((playlist) => (
+                    <PlaylistComponent key={playlist} playlist={playlist} deletePlaylist={deletePlaylist}/>
+                ))
+                }
             </div>
         </div>
     );

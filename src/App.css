@@ -25,13 +25,13 @@ html, .cover{
 
 /* Control the left side */
 .left {
-  width: 70%;
+  width: 60%;
   left: 0;
 }
 
 /* Control the right side */
 .right {
-  width: 30%;
+  width: 40%;
   right: 0;
   background-color: antiquewhite;
 }
@@ -195,4 +195,25 @@ li {
   margin-top: 40px;
   font-family: 'Courier New', Courier, monospace;
   font-size: 20px;
+}
+
+.savedPlaylist {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Playlist component PlaylistComponents */
+
+.savedPlaylistName {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-left: 25px;
+}
+
+.savedPlaylistNameButton {
+  display: inline-flex;
+  justify-content: flex-end;
+  padding-right: 30px;
 }
