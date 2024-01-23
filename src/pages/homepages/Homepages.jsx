@@ -50,7 +50,6 @@ export default function Homepage() {
         fetch('https://api.spotify.com/v1/search?q=' + searchInput + '&type=track', searchParameters)
             .then(response => response.json())
             .then(data => {
-                console.log(data.tracks.items)
                 setAlbums(data.tracks.items)
 
                 if (cancel) return
@@ -87,7 +86,7 @@ export default function Homepage() {
                 </SearchResults>
             </div>
             <div className='split right'>
-                <UserPlaylist />
+                <UserPlaylist searchResult={searchResult}/>
             </div>
         </div>
     );

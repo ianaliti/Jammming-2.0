@@ -1,12 +1,19 @@
-import { React, useState } from 'react';
+import { React, useEffect, useState } from 'react';
 import MyButton from '../button/MyButton';
 import PlaylistComponent from '../PlaylistComponent/PlaylistComponent';
+import FavoriteTracks from '../favoriteTracks/FavoriteTracks';
 
 
-const UserPlaylist = () => {
+const UserPlaylist = ({ searchResult }) => {
 
     const [playlists, setPlaylists] = useState([]);
     const [currentValue, setCurrectValue] = useState('');
+    const [allTrack, setAllTrack] = useState([])
+
+    useEffect(() => {
+        setAllTrack([...searchResult])
+    }, [searchResult])
+
 
     const handleChange = (e) => {
         setCurrectValue(e.target.value)
@@ -44,7 +51,6 @@ const UserPlaylist = () => {
                 return playlist;
             } else {
                 return playlist;
-                console.log(playlist)
             }
         }))
     }
@@ -77,6 +83,9 @@ const UserPlaylist = () => {
                         ))
                     }
                 </ul>
+            </div>
+            <div>
+                <FavoriteTracks allTrack={allTrack} />
             </div>
         </div>
     );

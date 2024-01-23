@@ -1,7 +1,7 @@
 import React from "react";
 import MyButton from "../button/MyButton";
 
-const Track = ({ track }) => {
+const Track = ({ track, addFavoriteTrack }) => {
 
     return (
         <div className="card">
@@ -13,7 +13,7 @@ const Track = ({ track }) => {
                 {track.artist}
             </div>
             <div className='add-buttom'>
-                <MyButton>Add</MyButton>
+                <MyButton onClick={() => addFavoriteTrack(track)} >Add</MyButton>
             </div>
         </div>
     );
