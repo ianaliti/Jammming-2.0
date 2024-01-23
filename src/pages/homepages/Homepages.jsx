@@ -17,6 +17,8 @@ export default function Homepage() {
     const [albums, setAlbums] = useState([]);
     const [searchResult, setSearchResult] = useState([]);
 
+    const [favoriteTracks, setFavoriteTracks] = useState([]);
+
 
     //Api token 
     useEffect(() => {
@@ -67,6 +69,11 @@ export default function Homepage() {
         return () => (cancel = true)
     }, [searchInput, accessToken])
 
+    const addFavoriteTrack = (track) => {
+        setFavoriteTracks([...favoriteTracks, track])
+        console.log(favoriteTracks)
+     };
+
 
     return (
         <div className='cover'>
@@ -80,13 +87,13 @@ export default function Homepage() {
                 <SearchResults>
                     {
                         searchResult.map((track) => (
-                            <Track key={track.uri} track={track} />
+                            <Track key={track.uri} track={track} addFavoriteTrack={addFavoriteTrack} />
                         ))
                     }
                 </SearchResults>
             </div>
             <div className='split right'>
-                <UserPlaylist searchResult={searchResult}/>
+                <UserPlaylist favoriteTracks={favoriteTracks}/>
             </div>
         </div>
     );

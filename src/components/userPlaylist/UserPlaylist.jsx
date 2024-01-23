@@ -4,15 +4,10 @@ import PlaylistComponent from '../PlaylistComponent/PlaylistComponent';
 import FavoriteTracks from '../favoriteTracks/FavoriteTracks';
 
 
-const UserPlaylist = ({ searchResult }) => {
+const UserPlaylist = ({ favoriteTracks }) => {
 
     const [playlists, setPlaylists] = useState([]);
     const [currentValue, setCurrectValue] = useState('');
-    const [allTrack, setAllTrack] = useState([])
-
-    useEffect(() => {
-        setAllTrack([...searchResult])
-    }, [searchResult])
 
 
     const handleChange = (e) => {
@@ -85,7 +80,7 @@ const UserPlaylist = ({ searchResult }) => {
                 </ul>
             </div>
             <div>
-                <FavoriteTracks allTrack={allTrack} />
+                <FavoriteTracks favoriteTracks={favoriteTracks} />
             </div>
         </div>
     );
