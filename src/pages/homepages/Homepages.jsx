@@ -4,7 +4,7 @@ import SearchBar from '../../components/searchBar/SearchBar';
 import Track from '../../components/track/Track';
 import UserPlaylist from '../../components/userPlaylist/UserPlaylist'
 import NavBar from '../../components/navBar/NavBar';
-
+import MyButton from '../../components/button/MyButton';
 
 const spotify_client_id = '20902d6883cf474a9d9eac6475aad534';
 const spotify_client_secret = '31fcd3efe0864552b85db24f22352a57';
@@ -71,7 +71,6 @@ export default function Homepage() {
 
     const addFavoriteTrack = (track) => {
         setFavoriteTracks([...favoriteTracks, track])
-        console.log(favoriteTracks)
      };
 
 
@@ -87,13 +86,16 @@ export default function Homepage() {
                 <SearchResults>
                     {
                         searchResult.map((track) => (
-                            <Track key={track.uri} track={track} addFavoriteTrack={addFavoriteTrack} />
+                            <div>
+                                <Track key={track.uri} track={track} addFavoriteTrack={addFavoriteTrack} />
+                                <MyButton onClick={() => addFavoriteTrack(track)}>Add</MyButton> 
+                            </div>
                         ))
                     }
                 </SearchResults>
             </div>
             <div className='split right'>
-                <UserPlaylist favoriteTracks={favoriteTracks}/>
+                <UserPlaylist favoriteTracks={favoriteTracks} setFavoriteTracks={setFavoriteTracks}/>
             </div>
         </div>
     );

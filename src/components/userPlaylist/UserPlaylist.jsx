@@ -4,7 +4,7 @@ import PlaylistComponent from '../PlaylistComponent/PlaylistComponent';
 import FavoriteTracks from '../favoriteTracks/FavoriteTracks';
 
 
-const UserPlaylist = ({ favoriteTracks }) => {
+const UserPlaylist = ({ favoriteTracks, setFavoriteTracks }) => {
 
     const [playlists, setPlaylists] = useState([]);
     const [currentValue, setCurrectValue] = useState('');
@@ -19,10 +19,10 @@ const UserPlaylist = ({ favoriteTracks }) => {
         if (currentValue.length > 0) {
             setPlaylists([...playlists, {
                 id: Math.random(),
-                title: currentValue
+                title: currentValue,
+                tracks: [favoriteTracks]
             }])
             setCurrectValue('')
-            console.log(playlists)
         }
     }
 
@@ -36,20 +36,19 @@ const UserPlaylist = ({ favoriteTracks }) => {
 
     const deletePlaylist = (id) => {
         setPlaylists(playlists.filter(playlist => playlist.id !== id))
+        setFavoriteTracks([]);
     }
 
     const editPlaylist = (id, title) => {
         setPlaylists(playlists.map(playlist => {
             if (playlist.id == id) {
                 playlist.title = title;
-                console.log(playlist)
                 return playlist;
             } else {
                 return playlist;
             }
         }))
     }
-
 
     return (
         <div>
@@ -78,8 +77,6 @@ const UserPlaylist = ({ favoriteTracks }) => {
                         ))
                     }
                 </ul>
-            </div>
-            <div>
                 <FavoriteTracks favoriteTracks={favoriteTracks} />
             </div>
         </div>

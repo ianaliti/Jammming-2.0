@@ -25,13 +25,13 @@ html, .cover{
 
 /* Control the left side */
 .left {
-  width: 60%;
+  width: 65%;
   left: 0;
 }
 
 /* Control the right side */
 .right {
-  width: 40%;
+  width: 35%;
   right: 0;
   background-color: antiquewhite;
 }
@@ -64,7 +64,7 @@ html, .cover{
   cursor: pointer;
 }
 
-.dropdown {
+/* .dropdown {
   color: rgb(251, 247, 255);
   height: 3em;
 }
@@ -106,7 +106,7 @@ html, .cover{
 
 .dropdown:hover .dropbtn {
   background-color: transparent;
-}
+} */
 
 /* Search bar */
 
@@ -138,23 +138,20 @@ h1 {
 
 .track_list {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
 
 }
 
 .card {
   flex: 0 1 calc(25% - 1em);
-  margin: 1rem .25em;
+  margin-top: 10px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: #212137;
-  background-color: azure;
-  border-radius: 1em;
+  background-color: rgb(244, 240, 230);
+  border-radius: 20px;
 }
-
-/* .add-button {
-  
-} */
 
 .image {
   max-width: 100%;

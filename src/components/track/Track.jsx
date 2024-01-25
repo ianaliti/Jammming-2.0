@@ -12,9 +12,6 @@ const Track = ({ track, addFavoriteTrack }) => {
             <div>
                 {track.artist}
             </div>
-            <div className='add-buttom'>
-                <MyButton onClick={() => addFavoriteTrack(track)} >Add</MyButton>
-            </div>
         </div>
     );
 };
