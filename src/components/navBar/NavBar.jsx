@@ -1,17 +1,19 @@
 import React from "react";
 import '@fortawesome/fontawesome-free/css/all.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse } from '@awesome.me/kit-KIT_CODE/icons/classic/solid'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { NavLink } from "react-router-dom";
+
 
 const NavBar = () => {
     return (
         <div className="navbar">
-            <h1>Jammming</h1>
-            {/* <div className='dropdown-content'> */}
-            {/* {/* <NavLink to='/'>Home</NavLink> */}
-            {/* </div> */}
-            <FontAwesomeIcon icon={faHouse} />
+            <div>
+                <h1>Jammming</h1>
+            </div>
+            <div className="spotify_icon">
+                <FontAwesomeIcon icon="fa-brands fa-spotify" bounce size="2xl" style={{color: "#ffe1a8",}} />
+            </div>
         </div>
 
     );

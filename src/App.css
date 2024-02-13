@@ -37,6 +37,10 @@ html {
   font-family: 'Courier New', Courier, monospace;
 }
 
+.spotify_icon {
+  margin-left: 1em;
+}
+
 /* .playlist_icon {
   color: azure;
   font-family: 'Courier New', Courier, monospace;
