@@ -7,7 +7,7 @@ const Track = ({ track }) => {
         <div className="card">
             <img className='card_image' src={track.imageUrl} />
             <div className="track-info">
-                <div>
+                <div className="track_name">
                     {track.name}
                 </div>
                 <div>

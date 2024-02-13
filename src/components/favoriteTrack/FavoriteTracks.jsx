@@ -1,6 +1,6 @@
 import React from "react";
 import Track from "../track/Track";
-import MyButton from "../button/MyButton";
+import MySecondButton from '../button/mySecondButton/MySecondButton'
 
 const FavoriteTracks = ({ favoriteTracks, setFavoriteTracks }) => {
 
@@ -16,7 +16,7 @@ const FavoriteTracks = ({ favoriteTracks, setFavoriteTracks }) => {
                 {favoriteTracks.map((track) => (
                     <div className="track_container card">
                         <Track track={track} key={track.id} />
-                        <MyButton onClick={() => onDelete(track.id)}>Delete</MyButton> 
+                        <MySecondButton onClick={() => onDelete(track.id)}>Delete</MySecondButton> 
                     </div>                     
                 ))}
             </ul>

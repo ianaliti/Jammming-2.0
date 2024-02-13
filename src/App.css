@@ -104,7 +104,7 @@ html {
 }
 
 .search-input:focus {
-  border: 3px solid #6610f2;
+  border: 3px solid #e26d5c;
   outline: none !important;
 }
 
@@ -152,6 +152,10 @@ html {
   width: 100%;
 }
 
+.track_name {
+  font-weight: 700;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -168,7 +172,7 @@ ul {
 }
 
 input:focus {
-  border: 2px solid #6610f2;
+  border: 2px solid #e26d5c;
   outline: none !important;
 }
 
