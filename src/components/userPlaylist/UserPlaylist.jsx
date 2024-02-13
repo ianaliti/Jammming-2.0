@@ -1,7 +1,7 @@
-import { React, useEffect, useState } from 'react';
+import { React, useState } from 'react';
 import MyButton from '../button/MyButton';
 import PlaylistComponent from '../PlaylistComponent/PlaylistComponent';
-import FavoriteTracks from '../favoriteTracks/FavoriteTracks';
+import FavoriteTracks from '../favoriteTrack/FavoriteTracks';
 
 
 const UserPlaylist = ({ favoriteTracks, setFavoriteTracks }) => {
@@ -77,7 +77,7 @@ const UserPlaylist = ({ favoriteTracks, setFavoriteTracks }) => {
                         ))
                     }
                 </ul>
-                <FavoriteTracks favoriteTracks={favoriteTracks} />
+                <FavoriteTracks favoriteTracks={favoriteTracks} setFavoriteTracks={setFavoriteTracks} />
             </div>
         </div>
     );

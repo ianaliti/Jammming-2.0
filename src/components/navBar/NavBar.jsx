@@ -6,13 +6,10 @@ const NavBar = () => {
     return (
         <div className="navbar">
             <div>
-                <div className='dropdown'>
-                    <button className="dropbtn">Jammming</button>
-                    <div className='dropdown-content'>
-                        {/* <NavLink to='/'>Home</NavLink>
-                    <NavLink to='playlist'>Playlist</NavLink> */}
-                    </div>
-                </div>
+                    <p>Jammming</p>
+                    {/* <div className='dropdown-content'> */}
+                        {/* {/* <NavLink to='/'>Home</NavLink> */}
+                {/* </div> */}
             </div>
         </div>
 

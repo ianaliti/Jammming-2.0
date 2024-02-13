@@ -16,7 +16,6 @@ export default function Homepage() {
     const [accessToken, setAccessToken] = useState('');
     const [albums, setAlbums] = useState([]);
     const [searchResult, setSearchResult] = useState([]);
-
     const [favoriteTracks, setFavoriteTracks] = useState([]);
 
 
@@ -61,7 +60,8 @@ export default function Homepage() {
                             uri: track.uri,
                             name: track.name,
                             artist: track.album.artists[0].name,
-                            imageUrl: track.album.images[1].url
+                            imageUrl: track.album.images[1].url,
+                            id: Math.random()
                         }
                     })
                 )
@@ -71,31 +71,33 @@ export default function Homepage() {
 
     const addFavoriteTrack = (track) => {
         setFavoriteTracks([...favoriteTracks, track])
-     };
+    };
 
 
     return (
         <div className='cover'>
             <NavBar />
-            <div className='split left'>
-                <SearchBar onChange={(e) => setSearchInput(e.target.value)} onKeyDown={(e) => {
-                    if (e.key === 'Enter') {
-                        ;
-                    }
-                }} />
-                <SearchResults>
-                    {
-                        searchResult.map((track) => (
-                            <div>
-                                <Track key={track.uri} track={track} addFavoriteTrack={addFavoriteTrack} />
-                                <MyButton onClick={() => addFavoriteTrack(track)}>Add</MyButton> 
-                            </div>
-                        ))
-                    }
-                </SearchResults>
-            </div>
-            <div className='split right'>
-                <UserPlaylist favoriteTracks={favoriteTracks} setFavoriteTracks={setFavoriteTracks}/>
+            <div className='cover'>
+                <div className='split left'>
+                    <SearchBar onChange={(e) => setSearchInput(e.target.value)} onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                            ;
+                        }
+                    }} />
+                    <SearchResults>
+                        {
+                            searchResult.map((track) => (
+                                <div>
+                                    <Track key={track.id} track={track} addFavoriteTrack={addFavoriteTrack} />
+                                    <MyButton onClick={() => addFavoriteTrack(track)}>Add</MyButton>
+                                </div>
+                            ))
+                        }
+                    </SearchResults>
+                </div>
+                <div className='split right'>
+                    <UserPlaylist favoriteTracks={favoriteTracks} setFavoriteTracks={setFavoriteTracks} />
+                </div>
             </div>
         </div>
     );

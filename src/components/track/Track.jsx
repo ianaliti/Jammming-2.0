@@ -1,15 +1,14 @@
 import React from "react";
-import MyButton from "../button/MyButton";
 
-const Track = ({ track, addFavoriteTrack }) => {
+const Track = ({ track }) => {
 
     return (
         <div className="card">
-            <img src={track.imageUrl} />
-            <div>
+            <img className='card_image' src={track.imageUrl} />
+            <div className="card_font">
                 {track.name}
             </div>
-            <div>
+            <div className="card_font">
                 {track.artist}
             </div>
         </div>
