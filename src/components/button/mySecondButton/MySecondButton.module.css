@@ -1,0 +1,15 @@
+.btn2 {
+    color: rgb(18, 17, 17);
+    border-radius: 2em;
+    height: 3em;
+    width: 6em;
+    border: solid #6610f2;
+    background-color: #fbf9f8;
+    margin: 0.5em auto;
+    transition: color 2s ease-out 100ms
+}
+
+.btn2:hover {
+    color: #6610f2;
+    font-size: 0.9em;
+}

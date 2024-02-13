@@ -14,7 +14,7 @@ const FavoriteTracks = ({ favoriteTracks, setFavoriteTracks }) => {
         <div>
             <ul>
                 {favoriteTracks.map((track) => (
-                    <div>
+                    <div className="track_container card">
                         <Track track={track} key={track.id} />
                         <MyButton onClick={() => onDelete(track.id)}>Delete</MyButton> 
                     </div>                     

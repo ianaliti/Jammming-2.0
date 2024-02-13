@@ -1,15 +1,18 @@
 import React from "react";
+import MyButton from "../button/MyButton";
 
 const Track = ({ track }) => {
 
     return (
         <div className="card">
             <img className='card_image' src={track.imageUrl} />
-            <div className="card_font">
-                {track.name}
-            </div>
-            <div className="card_font">
-                {track.artist}
+            <div className="track-info">
+                <div>
+                    {track.name}
+                </div>
+                <div>
+                    {track.artist}
+                </div>
             </div>
         </div>
     );

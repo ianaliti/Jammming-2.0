@@ -100,11 +100,11 @@ html {
   height: 5em;
   width: 25em;
   border-radius: 4em;
-  border: solid rgb(18, 17, 17);
+  border: solid #6610f2;
 }
 
 .search-input:focus {
-  border: 3px solid #3b3b88;
+  border: 3px solid #6610f2;
   outline: none !important;
 }
 
@@ -114,18 +114,23 @@ html {
 
 .track_list {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding: 0.5em;
+}
 
+.track_container {
+    display: inline;
 }
 
 .card {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 0.8em;
-  color: #fbf7f0;
-  background-color: #6610f2;
-  height: auto;
-  border-radius: 1em;
+  color: #20201f;
+  width: 100%;
 }
 
 .card_image {
@@ -139,8 +144,18 @@ html {
   background-color: transparent;
 }
 
-.card_font {
+.track-info {
   font-family: 'Courier New', Courier, monospace;
+  height: auto;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0.5em;
 }
 
 /* form name */
@@ -149,8 +164,12 @@ html {
   height: 2em;
   width: 15em;
   border-radius: 4em;
-  border: solid rgb(18, 17, 17);
-  
+  border: solid #6610f2;
+}
+
+input:focus {
+  border: 2px solid #6610f2;
+  outline: none !important;
 }
 
 .submitForm p {
@@ -169,7 +188,7 @@ li {
   height: 30px;
   width: 170px;
   margin-top: 10px;
-  border: solid rgb(18, 17, 17);
+  border: solid #6610f2;
 }
 
 .playlist p {

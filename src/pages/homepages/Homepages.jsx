@@ -5,6 +5,7 @@ import Track from '../../components/track/Track';
 import UserPlaylist from '../../components/userPlaylist/UserPlaylist'
 import NavBar from '../../components/navBar/NavBar';
 import MyButton from '../../components/button/MyButton';
+import MySecondButton from '../../components/button/mySecondButton/MySecondButton'
 
 const spotify_client_id = '20902d6883cf474a9d9eac6475aad534';
 const spotify_client_secret = '31fcd3efe0864552b85db24f22352a57';
@@ -87,9 +88,9 @@ export default function Homepage() {
                     <SearchResults>
                         {
                             searchResult.map((track) => (
-                                <div>
+                                <div className='card'>
                                     <Track key={track.id} track={track} addFavoriteTrack={addFavoriteTrack} />
-                                    <MyButton onClick={() => addFavoriteTrack(track)}>Add</MyButton>
+                                    <MySecondButton onClick={() => addFavoriteTrack(track)}>Add</MySecondButton>
                                 </div>
                             ))
                         }
