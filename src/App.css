@@ -4,43 +4,20 @@
 }
 
 html {
-  background-color: #C9CBA3;
+  background-color: #ffe1a8;
+  height: 100%;
 }
 
 .cover {
-  background-color: #3b3b88;
-  width: 1000px;
-  height: 700px;
-
-}
-
-.split {
-  height: 100%;
-  position: fixed;
-  z-index: 1;
-  overflow-x: hidden;
-
+  display: flex;
 }
 
 /* Control the left side */
-.left {
-  width: 65%;
-  left: 50px;
-}
-
-/* Control the right side */
-.right {
-  width: 35%;
-  right: 50px;
-  background-color: #ffff;
-}
-
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+.split {
+  flex: 1;
+  margin: 1em;
+  background-color: #c9cba3;
+  border-radius: 1.5em;
 }
 
 
@@ -49,23 +26,25 @@ html {
 .navbar {
  display: flex;
  justify-content: center;
- background-color: #5C5552;
+ align-items: center;
+ background-color: #e26d5c;
+ height: 4em;
 }
 
-.navbar p {
+.navbar h1 {
   font-size: 3em;
-  color: #fbfafb;
+  color: #fbf7f0;
   font-family: 'Courier New', Courier, monospace;
 }
 
-.playlist_icon {
+/* .playlist_icon {
   color: azure;
   font-family: 'Courier New', Courier, monospace;
   padding: 20px;
   font-size: 25px;
   border: none;
   cursor: pointer;
-}
+} */
 
 /* .dropdown {
   color: rgb(251, 247, 255);
@@ -114,9 +93,8 @@ html {
 /* Search bar */
 
 .search-bar {
-  padding: 12rem 0 2rem 0;
+  padding-top: 4em;
 }
-
 
 .search-input {
   height: 5em;
@@ -133,11 +111,6 @@ html {
 
 /* Tracklist */
 
-h1 {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 40px;
-  color: azure;
-}
 
 .track_list {
   display: flex;
@@ -149,8 +122,8 @@ h1 {
 
 .card {
   margin-top: 0.8em;
-  color: #212137;
-  background-color: #E26D5C;
+  color: #fbf7f0;
+  background-color: #6610f2;
   height: auto;
   border-radius: 1em;
 }

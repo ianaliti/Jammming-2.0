@@ -75,10 +75,10 @@ export default function Homepage() {
 
 
     return (
-        <div className='cover'>
+        <div>
             <NavBar />
             <div className='cover'>
-                <div className='split left'>
+                <div className='split'>
                     <SearchBar onChange={(e) => setSearchInput(e.target.value)} onKeyDown={(e) => {
                         if (e.key === 'Enter') {
                             ;
@@ -95,7 +95,7 @@ export default function Homepage() {
                         }
                     </SearchResults>
                 </div>
-                <div className='split right'>
+                <div className='split'>
                     <UserPlaylist favoriteTracks={favoriteTracks} setFavoriteTracks={setFavoriteTracks} />
                 </div>
             </div>

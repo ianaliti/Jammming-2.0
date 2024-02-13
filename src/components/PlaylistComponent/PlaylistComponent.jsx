@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import MyButton from "../button/MyButton";
-import FavoriteTracks from "../favoriteTrack/FavoriteTracks";
 
 const PlaylistComponent = (props) => {
 

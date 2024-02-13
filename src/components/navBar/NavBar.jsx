@@ -5,12 +5,10 @@ import { NavLink } from "react-router-dom";
 const NavBar = () => {
     return (
         <div className="navbar">
-            <div>
-                    <p>Jammming</p>
-                    {/* <div className='dropdown-content'> */}
-                        {/* {/* <NavLink to='/'>Home</NavLink> */}
-                {/* </div> */}
-            </div>
+            <h1>Jammming</h1>
+            {/* <div className='dropdown-content'> */}
+            {/* {/* <NavLink to='/'>Home</NavLink> */}
+            {/* </div> */}
         </div>
 
     );
