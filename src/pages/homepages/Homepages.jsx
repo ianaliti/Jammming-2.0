@@ -4,7 +4,6 @@ import SearchBar from '../../components/searchBar/SearchBar';
 import Track from '../../components/track/Track';
 import UserPlaylist from '../../components/userPlaylist/UserPlaylist'
 import NavBar from '../../components/navBar/NavBar';
-import MyButton from '../../components/button/MyButton';
 import MySecondButton from '../../components/button/mySecondButton/MySecondButton'
 
 const spotify_client_id = '20902d6883cf474a9d9eac6475aad534';
@@ -22,7 +21,7 @@ export default function Homepage() {
 
     //Api token 
     useEffect(() => {
-        var authOptions = {
+        let authOptions = {
             method: 'POST',
             headers: {
                 'Content-type': 'application/x-www-form-urlencoded'
@@ -42,7 +41,7 @@ export default function Homepage() {
 
         let cancel = false;
 
-        var searchParameters = {
+        let searchParameters = {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -71,7 +70,9 @@ export default function Homepage() {
     }, [searchInput, accessToken])
 
     const addFavoriteTrack = (track) => {
-        setFavoriteTracks([...favoriteTracks, track])
+        if(!favoriteTracks.includes(track)) {
+            setFavoriteTracks([...favoriteTracks, track])
+        }
     };
 
 
@@ -80,11 +81,7 @@ export default function Homepage() {
             <NavBar />
             <div className='cover'>
                 <div className='split'>
-                    <SearchBar onChange={(e) => setSearchInput(e.target.value)} onKeyDown={(e) => {
-                        if (e.key === 'Enter') {
-                            ;
-                        }
-                    }} />
+                    <SearchBar onChange={(e) => setSearchInput(e.target.value)} />
                     <SearchResults>
                         {
                             searchResult.map((track) => (

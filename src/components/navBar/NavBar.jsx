@@ -12,7 +12,7 @@ const NavBar = () => {
                 <h1>Jammming</h1>
             </div>
             <div className="spotify_icon">
-                <FontAwesomeIcon icon="fa-brands fa-spotify" bounce size="2xl" style={{color: "#ffe1a8",}} />
+                <FontAwesomeIcon icon="fa-brands fa-spotify" size="2xl" style={{color: "#ffe1a8",}} />
             </div>
         </div>
 

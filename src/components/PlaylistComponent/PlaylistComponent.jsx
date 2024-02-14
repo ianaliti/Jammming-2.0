@@ -40,19 +40,19 @@ const PlaylistComponent = (props) => {
                     {
                         isEditing ? (
                             <div className="savedPlaylistNameButton">
-                                <MyButton className="button-cancel dropdown"
+                                <MyButton 
                                     onClick={() => setIsEditing(false)}>
                                     Cancel</MyButton>
-                                <MyButton className="button-save dropdown"
+                                <MyButton className=""
                                     onClick={() => savePlaylist()}>
                                     Save</MyButton>
                             </div>
                         ) : (
                             <div className="savedPlaylistNameButton">
-                                <MyButton className="button-delete dropdown"
+                                <MyButton 
                                     onClick={() => deletePlaylist(id)}>
                                     Delete</MyButton>
-                                <MyButton className="button-edit dropdown"
+                                <MyButton
                                     onClick={() => setIsEditing(true)}>
                                     Edit</MyButton>
                             </div>
