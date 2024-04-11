@@ -2,8 +2,6 @@ import React from "react";
 import '@fortawesome/fontawesome-free/css/all.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { NavLink } from "react-router-dom";
-
 
 const NavBar = () => {
     return (
